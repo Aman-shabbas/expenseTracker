@@ -30,6 +30,13 @@ describe("testing is Equal method", () => {
 
 describe("testing add method", () => {
   it("adding two Expense should give rsulting Expense", () => {
+    const expense1 = new Expense(2, 10);
+    const expense2 = new Expense(2, 30);
+
+    assert(expense1.add(expense2).isEqualTo(new Expense(4, 40)));
+  });
+
+  it("total cents higher than 100 should rounded to dollar", () => {
     const expense1 = new Expense(2, 40);
     const expense2 = new Expense(2, 60);
 
