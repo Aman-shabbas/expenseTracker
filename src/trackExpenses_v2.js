@@ -17,12 +17,12 @@ export class Expense {
 
   isEqualTo(other) {
     if (!(other instanceof Expense)) return false;
-    console.log(this.toString(), other.toString());
 
     return other.#cents === this.#cents && other.#dollars === this.#dollars;
   }
 
   toString() {
-    return `${this.#dollars}.${this.#cents}`;
+    const centsInTwodigits = ("" + this.#cents).padEnd(2, "0");
+    return `${this.#dollars}.${centsInTwodigits}`;
   }
 }
